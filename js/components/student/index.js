@@ -36,7 +36,7 @@ class GradesListDivider extends Component {
   addAbsentee(token) {
     firebaseClient.sendNotification(token);
     Alert.alert(
-      token, //'Absenta adaugata',
+      'Absenta adaugata',
       'Absenta a fost adaugata pentru astazi. Elevul si parintii au fost notificati.',
       [
         //{text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},

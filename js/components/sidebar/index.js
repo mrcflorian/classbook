@@ -50,7 +50,7 @@ const datas = [
     route: "class",
     icon: 'paper',
     bg: '#C5F442'
-  },
+  }/*,
   {
     name: 'Anatomy',
     route: 'anatomy',
@@ -191,7 +191,7 @@ const datas = [
     route: 'typography',
     icon: 'paper',
     bg: '#48525D',
-  },
+  },*/
 
 ];
 class SideBar extends Component {
@@ -223,11 +223,6 @@ class SideBar extends Component {
           style={{ flex: 1, backgroundColor: '#fff', top: -1 }}
         >
           <Image source={drawerCover} style={styles.drawerCover}>
-            <Image
-              square
-              style={styles.drawerImage}
-              source={drawerImage}
-            />
           </Image>
           <List
             dataArray={datas} renderRow={data =>

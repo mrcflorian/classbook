@@ -26,5 +26,7 @@ export default {
   text: {
     color: '#D8D8D8',
     bottom: 6,
+    marginTop: deviceHeight / 3,
+    fontSize: 24,
   },
 };
