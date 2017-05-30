@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import { Platform } from 'react-native';
 
+import * as firebase from "firebase";
+
 import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from "react-native-fcm";
 
 import firebaseClient from  "./FirebaseClient";
@@ -16,6 +18,20 @@ export default class PushController extends Component {
 
     FCM.getFCMToken().then(token => {
       console.log("TOKEN (getFCMToken)", token);
+      // Initialize Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyAjG5He0sc5fi3VpFQ2TVnvCYrC8ottn3I",
+        authDomain: "649981104246-lbh16jka4bf942p899ukv0h83g0pj3fq.apps.googleusercontent.com",
+        databaseURL: "https://classbook-34b63.firebaseio.com/",
+        storageBucket: "classbook-34b63.appspot.com",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Create a reference with .ref() instead of new Firebase(url)
+      const rootRef = firebase.database().ref();
+      const tokenRef = rootRef.child('device_tokens');
+      tokenRef.push({"device_token": token});
+
       this.props.onChangeToken(token);
     });
 
