@@ -8,12 +8,23 @@ import { Container, Header, Title, Content, Button, Icon, List, ListItem, Text, 
 import { Actions } from 'react-native-router-flux';
 
 import styles from './styles';
+import firebaseClient from  "./../../firebase/FirebaseClient";
+import PushController from  "./../../firebase/PushController";
 
 const {
   popRoute,
 } = actions;
 
 class GradesListDivider extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      token: "",
+      tokenCopyFeedback: ""
+    }
+  }
 
   static propTypes = {
     popRoute: React.PropTypes.func,
@@ -22,9 +33,10 @@ class GradesListDivider extends Component {
     }),
   }
 
-  addAbsentee() {
+  addAbsentee(token) {
+    firebaseClient.sendNotification(token);
     Alert.alert(
-      'Absenta adaugata',
+      token, //'Absenta adaugata',
       'Absenta a fost adaugata pentru astazi. Elevul si parintii au fost notificati.',
       [
         //{text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
@@ -40,8 +52,12 @@ class GradesListDivider extends Component {
   }
 
   render() {
+    let { token, tokenCopyFeedback } = this.state;
     return (
       <Container style={styles.container}>
+        <PushController
+          onChangeToken={token => this.setState({token: token || ""})}/>
+
         <Header>
           <Left>
             <Button transparent onPress={() => Actions.pop()}>
@@ -86,7 +102,7 @@ class GradesListDivider extends Component {
                 <Icon active name="color-filter" />
                 <Text>Adauga nota</Text>
               </Button>
-              <Button onPress={() => this.addAbsentee()} iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
+              <Button onPress={() => this.addAbsentee(token)} iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
                 <Icon active name="walk" />
                 <Text>Absent</Text>
               </Button>

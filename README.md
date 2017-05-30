@@ -35,7 +35,7 @@ $ react-native link
 
 **Method One**
 
-*	Open the project in Xcode from **ios/NativebaseKitchenSink.xcodeproj**.
+*	Open the project in Xcode from **ios/ClassBook.xcodeproj**.
 
 *	Hit the play button.
 

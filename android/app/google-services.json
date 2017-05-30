@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "649981104246",
+    "firebase_url": "https://classbook-34b63.firebaseio.com",
+    "project_id": "classbook-34b63",
+    "storage_bucket": "classbook-34b63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649981104246:android:db8df57849d0dab4",
+        "android_client_info": {
+          "package_name": "ro.classbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649981104246-lbh16jka4bf942p899ukv0h83g0pj3fq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjG5He0sc5fi3VpFQ2TVnvCYrC8ottn3I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649981104246:android:a7f9c667b83f8d8b",
+        "android_client_info": {
+          "package_name": "com.classbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649981104246-lbh16jka4bf942p899ukv0h83g0pj3fq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjG5He0sc5fi3VpFQ2TVnvCYrC8ottn3I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

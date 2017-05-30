@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.2.6/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f83a631abfdb790591a720e0cfb5f41329831c3">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-10.2.6_5643ec49498e13110cdaac80eefc4b18a273ffd2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ca63c521b5745ae9a09629d7ca67ff6bc2a967fe">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-0.11.0_445b40438fc7494fe289d8e3b2cca353395423c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/me.leolin/ShortcutBadger/1.1.10/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c6792fb346d4f11b5b9e6c1a5df3a99c140a9e70">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/me.leolin-ShortcutBadger-1.1.10_6204fceb93a61839287ead91ef3c15110149a3c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/10.2.6/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="215363c803a119c16058c8bc0ccd0a4ee62e7157">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gcm-10.2.6_2a4e6c75e9912a9391cd98511c01026478adb52d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_f51ef25dc38ccdfdfe57661e4f29c5fb99fd79da.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.42.3/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="962b06c207e808c0557ffd6163ac584025a96021">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.42.3_2d3defe72ef54782186e57ebfde80d82324aa1a2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/library-2.4.0_c98153b808f0c4ab761271decd99edd03057deff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.42.3/jars/libs/infer-annotations-1.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="dcac634e137395f79693ec760f081a86eb2bd84e">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/infer-annotations-1.5_2779ec436b55453c31ea9ee8251922375c77bc56.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.2.0_d26de913eb7efe7db89b18f1cf72ba94b59e4d0b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1137942adeb03984c1311b662363dd38fc238fd3">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-0.11.0_366888361fcd15cd3e88549e09d6135f0c52db79.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/ClassBook/react-native-push-notification/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="83b01ee34e773585e3669dec96d4b9caa69cb4b1">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/ClassBook-react-native-push-notification-unspecified_d367fbf5ff6646c54c62b6e40d8d2892ffac95eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.6/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="900a290779cdb4eb2e63b6f7806fd9f30ce4f60d">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.2.6_deef34b4a9e69efa7988f51fc06d72766db28b6f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.2.0_82e2d6c4e8bc23bcbe47abd086601366ac32de62.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/ClassBook/react-native-fcm/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="19f808be7ee528c2ddbf957fc6e159673526788a">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/ClassBook-react-native-fcm-unspecified_6a06f42e032bb3eb1eca8ba938e31ea698ca5b76.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.2.6/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d79c575e1d97b0298746a4c032a0c1dc201c2f82">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-10.2.6_51b216c5dddfc809a6d8da1fc8b90ee6edc2a1a2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2b8a01ad9da5d26d0067894c22e87597bca2c500">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-0.11.0_8233c52771188441a2086b0b8437b905001eb215.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_870bf6e6931077ed3837f6e375f296e9c99ad970.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_1ec97b9d7a047bd18f5842cca07376873827de42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.6/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f0a85e6000998ac322ddd50750e8cf91601a84b">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.2.6_2c7d7d93a7e9c99b6230cc2c15e2a7f4109a93cc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/ClassBook/react-native-code-push/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1cce0fc496825f0dc97c1a51eb8cdd36646f6746">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/ClassBook-react-native-code-push-unspecified_cc0e8939770eb73577c2f695bcf9bf9eee9ecae5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.2.0_04f382644c1c8ecfa699a32fb4ef12a4c8722819.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_f3525b48c0e37b3ee932c85604f59384d8aeb190.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.6/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.6_26291130670ce9756c256a4e1514af7a66e719b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="98786c1770b531b9194fb6448b2a2692c64074b6">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-0.11.0_01ea0650851347d6f6b152806a58ebee19ac40a4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.2.6/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="da832806828ba407284c0c4b1d87b8f9ed9f2520">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-10.2.6_fe39ac16570226d47bdc451057f79046adef9275.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/10.2.6/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d54a722583c1b99735f62d395806fa38bf5669ae">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-iid-10.2.6_6bcf6b8abcf7fd557f8321e7423f7338c1d7cc9b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.2.6/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9ff5114aff3bfb387577ba92a11408dcf0441c24">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-messaging-10.2.6_7d8f953d995aa482ab3f527cecb6693c438455dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1_d8ceab3540afb4d0c638797cad79320b1259d3fc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_5bea3e26c0d7b97f915448e351a8a075e1188873.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_4b91f74281e99e1db05698dc307e6a10a8fb4460.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_92f26e02fdbc040b98757736364dab3eeaf57403.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_5c5e96b3c6603a140ae70e43adf06fc530fc39c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.2.0_4dec4257aba7de2071f6f81ca1a871ec0412b4bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d31aadf33187c37a7cd63dc1b769f8c6e33f78c3">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-0.11.0_acc19ad19b4cde783426947dce80af767cdac618.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/support-annotations-25.2.0_9566fbf23db951932ef245c469300b998c262279.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_5ecc067140a2a4d05c487c06ecd36aa71d8f3090.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.2.6/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="0a534044236cf81b002604643d23e7ca56bd1ee0">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-10.2.6_9c409533d8dbfa3a5fc0cd654652a59da09e4d86.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/okio-1.9.0_0a8c4287b05dbf33ca7ae83322b9539157edcbd0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.2.0_6283275c62d1fb924d87a782d2241a3073f0830f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.2.0_94279e1e786d5ea73acacf26f2005eeb7951554d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1_1c612e9c434e3fdbd849c5e5b3329814fb82b34a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3341b66c54367e777a0647e2db96c045329bfeab">
+        <dex dex="/Users/Florian/workspace/ClassBook/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-0.11.0_662bd1bf05829d8ff702975e53f47e2da769d87d.jar" />
+    </item>
+
+</items>

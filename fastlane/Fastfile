@@ -10,7 +10,7 @@ platform :ios do
   before_all do
     ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
     ENV["USER_NAME"] = sh "git config --global user.name"
-    ENV["VERSION"] = sh "/usr/libexec/PlistBuddy -c 'Print:CFBundleShortVersionString' ../ios/NativebaseKitchenSink/Info.plist"
+    ENV["VERSION"] = sh "/usr/libexec/PlistBuddy -c 'Print:CFBundleShortVersionString' ../ios/ClassBook/Info.plist"
   end
 
 
@@ -24,11 +24,11 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   lane :testflight do
     increment_build_number({
-      xcodeproj: "./ios/NativebaseKitchenSink.xcodeproj",
+      xcodeproj: "./ios/ClassBook.xcodeproj",
       build_number: latest_testflight_build_number + 1
     })
-    gym(project: "ios/NativebaseKitchenSink.xcodeproj", scheme: "NativebaseKitchenSink")
-    pilot(ipa: "./NativebaseKitchenSink.ipa")
+    gym(project: "ios/ClassBook.xcodeproj", scheme: "ClassBook")
+    pilot(ipa: "./ClassBook.ipa")
     ENV["SLACK_MESSAGE"]="Successfully Deployed New Update on TestFlight - Build Version: #{latest_testflight_build_number}"
   end
 
