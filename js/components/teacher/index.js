@@ -42,18 +42,15 @@ class TeachingGroupsList extends Component {
 
   componentDidMount() {
 
-    var groupsURL = 'https://fpzyzahtvz.localtunnel.me/teacher/' + this.props.data + '/groups';
+    var groupsURL = 'https://zqycyzsjit.localtunnel.me/teacher/' + this.props.data + '/groups';
 
     return fetch(groupsURL)
       .then((response) => response.json())
       .then((responseJson) => {
-        //let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-        console.log(responseJson);
         this.setState({
           isLoading: false,
           dataSource: responseJson.schools,
         }, function() {
-          // do something with new state
         });
       })
       .catch((error) => {

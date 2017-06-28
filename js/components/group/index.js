@@ -38,7 +38,7 @@ class GroupList extends Component {
 
   componentDidMount() {
 
-    var studentsListURL = 'https://fpzyzahtvz.localtunnel.me/group/' + this.props.data.id + '/students';
+    var studentsListURL = 'https://zqycyzsjit.localtunnel.me/group/' + this.props.data.id + '/students';
 
     return fetch(studentsListURL)
       .then((response) => response.json())
@@ -81,8 +81,8 @@ class GroupList extends Component {
         <Content>
           <List
             dataArray={this.state.dataSource} renderRow={data =>
-              <ListItem button onPress={() => { Actions["student"](); this.props.closeDrawer() }} >
-                <Text>{data.first_name} {data.last_name}</Text>
+              <ListItem button onPress={() => { Actions["student"]({data: {teacher_id: this.props.data.teacher_id, student_id: data.id, student_name: data.last_name + " " + data.first_name}}); this.props.closeDrawer() }} >
+                <Text>{data.last_name} {data.first_name}</Text>
                 <Right>
                   <Icon name="arrow-forward" style={{ color: '#999' }} />
                 </Right>

@@ -85,7 +85,7 @@ class Home extends Component { // eslint-disable-line
     });
 
     const { username, password } = this.state;
-    var loginURL = 'https://fpzyzahtvz.localtunnel.me/login/username/' + username + '/password/' + password;
+    var loginURL = 'https://zqycyzsjit.localtunnel.me/login/username/' + username + '/password/' + password;
     fetch(loginURL)
       .then((response) => response.json())
       .then((responseJson) => {

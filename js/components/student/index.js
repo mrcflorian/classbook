@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
 
-import { View, Alert } from 'react-native';
+import { View, Alert, ActivityIndicator } from 'react-native';
+
 import { Container, Header, Title, Content, Button, Icon, List, ListItem, Text, Left, Right, Body } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
@@ -22,7 +23,9 @@ class GradesListDivider extends Component {
 
     this.state = {
       token: "",
-      tokenCopyFeedback: ""
+      tokenCopyFeedback: "",
+      dataSource: [],
+      isLoading: true,
     }
   }
 
@@ -51,7 +54,36 @@ class GradesListDivider extends Component {
     this.props.popRoute(this.props.navigation.key);
   }
 
+  componentDidMount() {
+
+    if (typeof this.props.data.teacher_id != "undefined") {
+      // Teacher is seeing student's grades
+      var groupsURL = 'https://zqycyzsjit.localtunnel.me/grades/teacher/' + this.props.data.teacher_id + '/student/' + this.props.data.student_id;
+      console.log(groupsURL);
+      return fetch(groupsURL)
+        .then((response) => response.json())
+        .then((responseJson) => {
+          this.setState({
+            isLoading: false,
+            dataSource: responseJson,
+          }, function() {
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }
+
   render() {
+    if (this.state.isLoading) {
+      return (
+        <View style={{flex: 1, paddingTop: 20}}>
+          <ActivityIndicator />
+        </View>
+      );
+    }
+
     let { token, tokenCopyFeedback } = this.state;
     return (
       <Container style={styles.container}>
@@ -65,62 +97,39 @@ class GradesListDivider extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Catalog elev</Title>
+            <Title>Catalog {this.props.data.student_name}</Title>
           </Body>
           <Right />
         </Header>
 
         <Content>
-          <ListItem itemDivider>
-            <Text>Limba Romana</Text>
-          </ListItem>
-          <ListItem>
-            <Text>10 pe 15 aprilie</Text>
-          </ListItem>
-          <ListItem>
-            <Text>7 pe 10 mai</Text>
-          </ListItem>
-          <ListItem>
-            <Text>9 pe 2 iunie</Text>
-          </ListItem>
-
-          <ListItem itemDivider>
-            <Text>Matematica</Text>
-          </ListItem>
-          <ListItem>
-            <Text>7 pe 25 ianuarie</Text>
-          </ListItem>
-          <ListItem>
-            <Text>6 pe 6 martie</Text>
-          </ListItem>
-          <ListItem>
-            <Text>9 pe 4 iunie</Text>
-          </ListItem>
-          <ListItem>
-            <View style={{ flexDirection: 'row', justifyContent: 'center', flex: 1 }}>
-              <Button iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
-                <Icon active name="color-filter" />
-                <Text>Adauga nota</Text>
-              </Button>
-              <Button onPress={() => this.addAbsentee(token)} iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
-                <Icon active name="walk" />
-                <Text>Absent</Text>
-              </Button>
-            </View>
-          </ListItem>
-
-          <ListItem itemDivider>
-            <Text>Limba Engleza</Text>
-          </ListItem>
-          <ListItem>
-            <Text>9 pe 15 februarie</Text>
-          </ListItem>
-          <ListItem>
-            <Text>7 pe 10 martie</Text>
-          </ListItem>
-          <ListItem>
-            <Text>8 pe 20 mai</Text>
-          </ListItem>
+        <List
+            dataArray={this.state.dataSource} renderRow={data =>
+              <Content>
+                <ListItem itemDivider>
+                  <Text>{data.subject.name}</Text>
+                </ListItem>
+                <List dataArray={data.grades} renderRow={grade =>
+                  <ListItem>
+                    <Text>Nota {grade.value}</Text>
+                  </ListItem>
+                  }
+                />
+                <ListItem>
+                  <View style={{ flexDirection: 'row', justifyContent: 'center', flex: 1 }}>
+                    <Button iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
+                      <Icon active name="color-filter" />
+                      <Text>Adauga nota</Text>
+                    </Button>
+                    <Button onPress={() => this.addAbsentee(token)} iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
+                      <Icon active name="walk" />
+                      <Text>Absent</Text>
+                    </Button>
+                  </View>
+                </ListItem>
+              </Content>
+            }
+          />
         </Content>
       </Container>
     );
