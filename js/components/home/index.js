@@ -17,8 +17,8 @@ class Home extends Component { // eslint-disable-line
     super(props)
 
     this.state = {
-      username: '',
-      password: '',
+      username: 'gabyy',
+      password: 'parola',
       isLoading: false,
     }
   }
@@ -85,15 +85,16 @@ class Home extends Component { // eslint-disable-line
     });
 
     const { username, password } = this.state;
-    var loginURL = 'https://hcstbwaeqb.localtunnel.me/login/username/' + username + '/password/' + password;
+    var loginURL = 'https://fpzyzahtvz.localtunnel.me/login/username/' + username + '/password/' + password;
     fetch(loginURL)
       .then((response) => response.json())
       .then((responseJson) => {
         var answer = responseJson.response;
+        console.log(answer);
         if (answer == 'student') {
-          Actions['teacher']();
+          Actions['student'](responseJson.student.id);
         } else if (answer == 'teacher') {
-          this.props.openDrawer();
+          Actions['teacher'](responseJson.teacher.id);
         } else {
           this.setState({
             isLoading: false
