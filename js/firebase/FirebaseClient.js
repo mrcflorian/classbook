@@ -12,7 +12,7 @@ class FirebaseClient {
 
   sendNotification(token) {
     let body = {
-    	"to": "eG7eqFdPuLw:APA91bEywOOMWHkkAn4wN5EtdaNQ7AtUj0a1VenQxAkF4VvuVCmmndwQz9yagA1z13iu26ggyUKOeu6gcn_j33i5xhUX7pPbAwb8PqMIX1jo1C1tWmj7jKQXiUuHmQwhkTpk58kfr9cd",
+    	"to": "dlFjHOZHYCg:APA91bH8hmHeIGVHxK941Xo2ay-oKReySnI1LgiXd5uVaGSCrdcmtxDSdA895atTkkSP6LpIu64MNqK2YOdswrNEdLioS-w2YqQ29kG_eM6qQLN_mj_O-fvMQouyqKD6X-F4dUGGvbOD",
       "notification":{
     		"title": "Catalog Elev",
     		"body": "Marcu Florian a primit o absenta la matematica.",

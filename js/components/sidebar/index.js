@@ -50,7 +50,14 @@ const datas = [
     route: "class",
     icon: 'paper',
     bg: '#C5F442'
-  }/*,
+  },
+  {
+    name: 'Form & Inputs',
+    route: 'form',
+    icon: 'call',
+    bg: '#EFB406',
+    types: '13',
+  },
   {
     name: 'Anatomy',
     route: 'anatomy',
@@ -191,7 +198,7 @@ const datas = [
     route: 'typography',
     icon: 'paper',
     bg: '#48525D',
-  },*/
+  },
 
 ];
 class SideBar extends Component {

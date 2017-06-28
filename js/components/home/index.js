@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Image, View, StatusBar } from 'react-native';
+import { Image, View, StatusBar, TextInput, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
-import { Container, Button, H3, Text } from 'native-base';
+import { Container, Button, H3, Text, Item, Content, Input, Form, Label } from 'native-base';
+
+import { Actions } from 'react-native-router-flux';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
@@ -10,6 +12,16 @@ const launchscreenBg = require('../../../img/launchscreen-bg.png');
 const launchscreenLogo = require('../../../img/logo-kitchen-sink.png');
 
 class Home extends Component { // eslint-disable-line
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      username: '',
+      password: '',
+      isLoading: false,
+    }
+  }
 
   static propTypes = {
     openDrawer: React.PropTypes.func,
@@ -22,6 +34,23 @@ class Home extends Component { // eslint-disable-line
   */
 
   render() {
+    if (this.state.isLoading) {
+      return (
+        <Container>
+          <StatusBar barStyle='light-content'/>
+          <Image source={launchscreenBg} style={styles.imageContainer}>
+            <View style={{ alignItems: 'center', marginBottom: 50, backgroundColor: 'transparent' }}>
+              <Text style={styles.text}>Catalog digital</Text>
+              <View style={{ marginTop: 8 }} />
+            </View>
+          </Image>
+          <View style={{flex: 1, paddingTop: 20}}>
+            <ActivityIndicator />
+          </View>
+        </Container>
+      );
+    }
+
     return (
       <Container>
         <StatusBar barStyle='light-content'/>
@@ -30,19 +59,55 @@ class Home extends Component { // eslint-disable-line
             <Text style={styles.text}>Catalog digital</Text>
             <View style={{ marginTop: 8 }} />
           </View>
-          <View style={{ marginBottom: 80 }}>
-            <Button
-              style={{ backgroundColor: '#6FAF98', alignSelf: 'center' }}
-              onPress={this.props.openDrawer}
-            >
-              <Text>Deschide</Text>
-            </Button>
-          </View>
         </Image>
+        <Content>
+          <Form>
+            <Item floatingLabel>
+              <Label>Utilizator</Label>
+              <Input onChangeText={username => this.setState({username})}/>
+            </Item>
+            <Item floatingLabel last>
+              <Label>Parola</Label>
+              <Input onChangeText={password => this.setState({password})} />
+            </Item>
+          </Form>
+          <Button block style={{ margin: 15, marginTop: 50, height: 80 }} onPress={this._login}>
+            <Text style={{fontSize: 30, lineHeight: 40}}>Deschide catalog</Text>
+          </Button>
+        </Content>
       </Container>
     );
   }
+
+  _login = () => {
+    this.setState({
+      isLoading: true
+    });
+
+    const { username, password } = this.state;
+    var loginURL = 'https://hcstbwaeqb.localtunnel.me/login/username/' + username + '/password/' + password;
+    fetch(loginURL)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        var answer = responseJson.response;
+        if (answer == 'student') {
+          Actions['teacher']();
+        } else if (answer == 'teacher') {
+          this.props.openDrawer();
+        } else {
+          this.setState({
+            isLoading: false
+          })
+        }
+      })
+      .catch((error) => {
+        this.setState({
+          isLoading: false
+        });
+      });
+  };
 }
+
 
 function bindActions(dispatch) {
   return {

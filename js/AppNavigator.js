@@ -13,6 +13,7 @@ import { closeDrawer } from './actions/drawer';
 import Home from './components/home/';
 import ClassList from './components/class/';
 import GradesListDivider from './components/student';
+import TeachingGroupsList from './components/teacher';
 import Header from './components/Header/';
 import Header1 from './components/Header/1';
 import Header2 from './components/Header/2';
@@ -177,6 +178,7 @@ class AppNavigator extends Component {
               <Scene key="home" component={Home} hideNavBar initial={true} />
               <Scene key="class" component={ClassList} />
               <Scene key="student" component={GradesListDivider} />
+              <Scene key="teacher" component={TeachingGroupsList} />
               <Scene key="header" component={Header} />
               <Scene key="header1" component={Header1} />
               <Scene key="header2" component={Header2} />

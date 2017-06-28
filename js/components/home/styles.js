@@ -4,12 +4,13 @@ const React = require('react-native');
 const { StyleSheet, Dimensions, Platform } = React;
 
 const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
 
 export default {
   imageContainer: {
-    flex: 1,
+    flex: 0,
     width: null,
-    height: null,
+    height: deviceHeight / 4,
   },
   logoContainer: {
     flex: 1,
@@ -27,6 +28,9 @@ export default {
     color: '#D8D8D8',
     bottom: 6,
     marginTop: deviceHeight / 3,
-    fontSize: 24,
+    fontSize: 34,
+  },
+  container: {
+    backgroundColor: '#FFF',
   },
 };
