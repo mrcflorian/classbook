@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
 
-import { View, Alert, ActivityIndicator } from 'react-native';
+import { View, Alert, ActivityIndicator, DatePickerAndroid } from 'react-native';
 
 import { Container, Header, Title, Content, Button, Icon, List, ListItem, Text, Left, Right, Body } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
+import { API_URL_BASE } from '../../config';
 import styles from './styles';
 import firebaseClient from  "./../../firebase/FirebaseClient";
 import PushController from  "./../../firebase/PushController";
@@ -36,9 +37,9 @@ class GradesListDivider extends Component {
     }),
   }
 
-  addAbsentee(token) {
+  async addAbsentee(token) {
     //firebaseClient.sendNotification(token);
-    Alert.alert(
+    /*Alert.alert(
       'Absenta adaugata',
       'Absenta a fost adaugata pentru astazi. Elevul si parintii au fost notificati.',
       [
@@ -47,7 +48,56 @@ class GradesListDivider extends Component {
         {text: 'OK', onPress: () => console.log('OK Pressed')},
       ],
       { cancelable: false }
-    )
+    )*/
+
+    try {
+      const {action, year, month, day} = await DatePickerAndroid.open({
+        date: new Date()
+      });
+      if (action !== DatePickerAndroid.dismissedAction) {
+        // Selected year, month (0-11), day
+        alert(day);
+      }
+    } catch ({code, message}) {
+      console.warn('Cannot open date picker', message);
+    }
+  }
+
+  async didPressAddGrade(subject_id, grade) {
+    try {
+      const {action, year, month, day} = await DatePickerAndroid.open({
+        date: new Date()
+      });
+      if (action !== DatePickerAndroid.dismissedAction) {
+        Alert.alert(
+          'Sunteti sigur?',
+          'Nota ' + grade + ' va fi adaugata pe data de ' + day + '-' + month + '-' + year,
+          [
+            //{text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+            {text: 'Confirm', onPress: () => this.didConfirmAddGrade(subject_id, grade, year + '-' + month + '-' + day)},
+            {text: 'Anuleaza', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          ],
+          { cancelable: true }
+        )
+      }
+    } catch ({code, message}) {
+      console.warn('Cannot open date picker', message);
+    }
+  }
+
+  didConfirmAddGrade(subject_id, grade, date) {
+    var addGradeURL = API_URL_BASE + 'grade/create/student/' + this.props.data.student_id + '/subject/' + subject_id +
+                      '/is_thesis/' + '0' + '/value/' + grade +'/date/' + date;
+
+    console.log(addGradeURL);
+    return fetch(addGradeURL)
+      .then((response) => {
+        alert("Nota a fost adaugata");
+        this.refreshDataIfNeeded();
+      })
+      .catch((error) => {
+        alert("Nota nu a putut fi adaugata. Va rugam incercati din nou.");
+      });
   }
 
   popRoute() {
@@ -55,11 +105,17 @@ class GradesListDivider extends Component {
   }
 
   componentDidMount() {
+    this.refreshDataIfNeeded()
+  }
 
+  refreshDataIfNeeded() {
     if (typeof this.props.data.teacher_id != "undefined") {
       // Teacher is seeing student's grades
-      var groupsURL = 'https://zqycyzsjit.localtunnel.me/grades/teacher/' + this.props.data.teacher_id + '/student/' + this.props.data.student_id;
-      console.log(groupsURL);
+      this.setState({
+        isLoading: true,
+        dataSource: this.state.dataSource,
+      });
+      var groupsURL = API_URL_BASE + 'grades/teacher/' + this.props.data.teacher_id + '/student/' + this.props.data.student_id;
       return fetch(groupsURL)
         .then((response) => response.json())
         .then((responseJson) => {
@@ -117,13 +173,15 @@ class GradesListDivider extends Component {
                 />
                 <ListItem>
                   <View style={{ flexDirection: 'row', justifyContent: 'center', flex: 1 }}>
-                    <Button iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
-                      <Icon active name="color-filter" />
-                      <Text>Adauga nota</Text>
-                    </Button>
+                    <Text>Adauga nota</Text>
+                    <List horizontal={true} dataArray={[10,9,8,7,6,5,4,3,2]} renderRow={grade =>
+                      <Button iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }} onPress={() => this.didPressAddGrade(data.subject.id, grade)}>
+                        <Text>{grade}</Text>
+                      </Button>
+                    } />
                     <Button onPress={() => this.addAbsentee(token)} iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
                       <Icon active name="walk" />
-                      <Text>Absent</Text>
+                      <Text>Adauga absenta</Text>
                     </Button>
                   </View>
                 </ListItem>

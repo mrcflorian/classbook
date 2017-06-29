@@ -6,6 +6,9 @@ import { Container, Button, H3, Text, Item, Content, Input, Form, Label } from '
 import { Actions } from 'react-native-router-flux';
 
 import { openDrawer } from '../../actions/drawer';
+
+import { API_URL_BASE } from '../../config';
+
 import styles from './styles';
 
 const launchscreenBg = require('../../../img/launchscreen-bg.png');
@@ -85,7 +88,7 @@ class Home extends Component { // eslint-disable-line
     });
 
     const { username, password } = this.state;
-    var loginURL = 'https://zqycyzsjit.localtunnel.me/login/username/' + username + '/password/' + password;
+    var loginURL = API_URL_BASE + 'login/username/' + username + '/password/' + password;
     fetch(loginURL)
       .then((response) => response.json())
       .then((responseJson) => {

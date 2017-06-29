@@ -8,6 +8,7 @@ import { Actions } from 'react-native-router-flux';
 import { actions } from 'react-native-navigation-redux-helpers';
 import { openDrawer, closeDrawer } from '../../actions/drawer';
 import styles from './styles';
+import { API_URL_BASE } from '../../config';
 
 
 const {
@@ -38,7 +39,7 @@ class GroupList extends Component {
 
   componentDidMount() {
 
-    var studentsListURL = 'https://zqycyzsjit.localtunnel.me/group/' + this.props.data.id + '/students';
+    var studentsListURL = API_URL_BASE + 'group/' + this.props.data.id + '/students';
 
     return fetch(studentsListURL)
       .then((response) => response.json())

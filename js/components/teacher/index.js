@@ -7,6 +7,7 @@ import { Container, Header, Title, Content, Button, Icon, List, ListItem, Text, 
 import { Actions } from 'react-native-router-flux';
 
 import { openDrawer } from '../../actions/drawer';
+import { API_URL_BASE } from '../../config';
 
 import styles from './styles';
 
@@ -42,7 +43,7 @@ class TeachingGroupsList extends Component {
 
   componentDidMount() {
 
-    var groupsURL = 'https://zqycyzsjit.localtunnel.me/teacher/' + this.props.data + '/groups';
+    var groupsURL = API_URL_BASE + 'teacher/' + this.props.data + '/groups';
 
     return fetch(groupsURL)
       .then((response) => response.json())
