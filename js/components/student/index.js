@@ -37,7 +37,7 @@ class GradesListDivider extends Component {
     }),
   }
 
-  async addAbsentee(token) {
+  async didPressAddSkip(token, subject_id) {
     //firebaseClient.sendNotification(token);
     /*Alert.alert(
       'Absenta adaugata',
@@ -55,12 +55,47 @@ class GradesListDivider extends Component {
         date: new Date()
       });
       if (action !== DatePickerAndroid.dismissedAction) {
-        // Selected year, month (0-11), day
-        alert(day);
+        Alert.alert(
+          'Sunteti sigur?',
+          'Absenta va fi adaugata pe data de ' + day + '-' + month + '-' + year,
+          [
+            {text: 'Confirma', onPress: () => this.didConfirmAddSkip(subject_id, year + '-' + month + '-' + day, token)},
+            {text: 'Anuleaza', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          ],
+          { cancelable: true }
+        )
       }
     } catch ({code, message}) {
       console.warn('Cannot open date picker', message);
     }
+  }
+
+  didConfirmAddSkip(subject_id, date, token) {
+    var addSkipURL = API_URL_BASE + 'skip/create/student/' + this.props.data.student_id + '/subject/' + subject_id + '/date/' + date;
+    console.log(addSkipURL);
+    return fetch(addSkipURL)
+      .then((response) => {
+        Alert.alert(
+          'Succes',
+          'Absenta a fost adaugata',
+          [
+            {text: 'Inchide', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          ],
+          { cancelable: false }
+        );
+        this.refreshDataIfNeeded();
+      })
+      .catch((error) => {
+        Alert.alert(
+          'Eroare',
+          'Absenta nu a putut fi adaugata. Va rugam incercati din nou.',
+          [
+            {text: 'Incearca din nou', onPress: () => this.didConfirmAddSkip(subject_id, date, token)},
+            {text: 'Anuleaza', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          ],
+          { cancelable: true }
+        );
+      });
   }
 
   async didPressAddGrade(subject_id, grade) {
@@ -74,7 +109,7 @@ class GradesListDivider extends Component {
           'Nota ' + grade + ' va fi adaugata pe data de ' + day + '-' + month + '-' + year,
           [
             //{text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-            {text: 'Confirm', onPress: () => this.didConfirmAddGrade(subject_id, grade, year + '-' + month + '-' + day)},
+            {text: 'Confirma', onPress: () => this.didConfirmAddGrade(subject_id, grade, year + '-' + month + '-' + day)},
             {text: 'Anuleaza', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
           ],
           { cancelable: true }
@@ -92,11 +127,26 @@ class GradesListDivider extends Component {
     console.log(addGradeURL);
     return fetch(addGradeURL)
       .then((response) => {
-        alert("Nota a fost adaugata");
+        Alert.alert(
+          'Succes',
+          'Nota a fost adaugata',
+          [
+            {text: 'Inchide', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          ],
+          { cancelable: false }
+        );
         this.refreshDataIfNeeded();
       })
       .catch((error) => {
-        alert("Nota nu a putut fi adaugata. Va rugam incercati din nou.");
+        Alert.alert(
+          'Eroare',
+          'Nota nu a putut fi adaugata. Va rugam incercati din nou.',
+          [
+            {text: 'Incearca din nou', onPress: () => this.didConfirmAddGrade(subject_id, grade, date)},
+            {text: 'Anuleaza', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          ],
+          { cancelable: true }
+        );
       });
   }
 
@@ -179,7 +229,7 @@ class GradesListDivider extends Component {
                         <Text>{grade}</Text>
                       </Button>
                     } />
-                    <Button onPress={() => this.addAbsentee(token)} iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
+                    <Button onPress={() => this.didPressAddSkip(token, data.subject.id)} iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
                       <Icon active name="walk" />
                       <Text>Adauga absenta</Text>
                     </Button>
