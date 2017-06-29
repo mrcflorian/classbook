@@ -57,9 +57,9 @@ class GradesListDivider extends Component {
       if (action !== DatePickerAndroid.dismissedAction) {
         Alert.alert(
           'Sunteti sigur?',
-          'Absenta va fi adaugata pe data de ' + day + '-' + month + '-' + year,
+          'Absenta va fi adaugata pe data de ' + day + '-' + (month+1) + '-' + year,
           [
-            {text: 'Confirma', onPress: () => this.didConfirmAddSkip(subject_id, year + '-' + month + '-' + day, token)},
+            {text: 'Confirma', onPress: () => this.didConfirmAddSkip(subject_id, year + '-' + (month+1) + '-' + day, token)},
             {text: 'Anuleaza', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
           ],
           { cancelable: true }
@@ -106,10 +106,10 @@ class GradesListDivider extends Component {
       if (action !== DatePickerAndroid.dismissedAction) {
         Alert.alert(
           'Sunteti sigur?',
-          'Nota ' + grade + ' va fi adaugata pe data de ' + day + '-' + month + '-' + year,
+          'Nota ' + grade + ' va fi adaugata pe data de ' + day + '-' + (month+1) + '-' + year,
           [
             //{text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-            {text: 'Confirma', onPress: () => this.didConfirmAddGrade(subject_id, grade, year + '-' + month + '-' + day)},
+            {text: 'Confirma', onPress: () => this.didConfirmAddGrade(subject_id, grade, year + '-' + (month+1) + '-' + day)},
             {text: 'Anuleaza', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
           ],
           { cancelable: true }
