@@ -82,7 +82,7 @@ class GroupList extends Component {
         <Content>
           <List
             dataArray={this.state.dataSource} renderRow={data =>
-              <ListItem button onPress={() => { Actions["student"]({data: {teacher_id: this.props.data.teacher_id, student_id: data.id, student_name: data.last_name + " " + data.first_name}}); this.props.closeDrawer() }} >
+              <ListItem button onPress={() => { Actions["student"]({data: {teacher_id: this.props.data.teacher_id, student_id: data.id, student_name: data.last_name + " " + data.first_name, student_device_token: data.device_token}}); this.props.closeDrawer() }} >
                 <Text>{data.last_name} {data.first_name}</Text>
                 <Right>
                   <Icon name="arrow-forward" style={{ color: '#999' }} />

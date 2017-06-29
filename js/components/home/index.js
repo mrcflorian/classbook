@@ -9,6 +9,8 @@ import { openDrawer } from '../../actions/drawer';
 
 import { API_URL_BASE } from '../../config';
 
+import PushController from  "./../../firebase/PushController";
+
 import styles from './styles';
 
 const launchscreenBg = require('../../../img/launchscreen-bg.png');
@@ -23,6 +25,7 @@ class Home extends Component { // eslint-disable-line
       username: 'gabyy',
       password: 'parola',
       isLoading: false,
+      token: ""
     }
   }
 
@@ -56,6 +59,9 @@ class Home extends Component { // eslint-disable-line
 
     return (
       <Container>
+        <PushController
+            onChangeToken={token => this.setState({token: token || ""})}/>
+
         <StatusBar barStyle='light-content'/>
         <Image source={launchscreenBg} style={styles.imageContainer}>
           <View style={{ alignItems: 'center', marginBottom: 50, backgroundColor: 'transparent' }}>
@@ -88,7 +94,8 @@ class Home extends Component { // eslint-disable-line
     });
 
     const { username, password } = this.state;
-    var loginURL = API_URL_BASE + 'login/username/' + username + '/password/' + password;
+    var loginURL = API_URL_BASE + 'login/username/' + username + '/password/' + password + '/device_token/' + this.state.token;
+    console.log(loginURL);
     fetch(loginURL)
       .then((response) => response.json())
       .then((responseJson) => {

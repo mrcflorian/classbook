@@ -90,7 +90,6 @@ export default class PushController extends Component {
     this.refreshTokenListener.remove();
   }
 
-
   render() {
     return null;
   }

@@ -37,19 +37,7 @@ class GradesListDivider extends Component {
     }),
   }
 
-  async didPressAddSkip(token, subject_id) {
-    //firebaseClient.sendNotification(token);
-    /*Alert.alert(
-      'Absenta adaugata',
-      'Absenta a fost adaugata pentru astazi. Elevul si parintii au fost notificati.',
-      [
-        //{text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-        //{text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-        {text: 'OK', onPress: () => console.log('OK Pressed')},
-      ],
-      { cancelable: false }
-    )*/
-
+  async didPressAddSkip(token, subject_id, subject_name, student_name) {
     try {
       const {action, year, month, day} = await DatePickerAndroid.open({
         date: new Date()
@@ -59,7 +47,7 @@ class GradesListDivider extends Component {
           'Sunteti sigur?',
           'Absenta va fi adaugata pe data de ' + day + '-' + (month+1) + '-' + year,
           [
-            {text: 'Confirma', onPress: () => this.didConfirmAddSkip(subject_id, year + '-' + (month+1) + '-' + day, token)},
+            {text: 'Confirma', onPress: () => this.didConfirmAddSkip(subject_id, subject_name, student_name, year + '-' + (month+1) + '-' + day)},
             {text: 'Anuleaza', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
           ],
           { cancelable: true }
@@ -70,9 +58,8 @@ class GradesListDivider extends Component {
     }
   }
 
-  didConfirmAddSkip(subject_id, date, token) {
+  didConfirmAddSkip(subject_id, subject_name, student_name, date) {
     var addSkipURL = API_URL_BASE + 'skip/create/student/' + this.props.data.student_id + '/subject/' + subject_id + '/date/' + date;
-    console.log(addSkipURL);
     return fetch(addSkipURL)
       .then((response) => {
         Alert.alert(
@@ -83,14 +70,17 @@ class GradesListDivider extends Component {
           ],
           { cancelable: false }
         );
+
+        firebaseClient.sendSkipNotification(this.props.data.student_device_token, student_name, subject_name, date);
         this.refreshDataIfNeeded();
       })
       .catch((error) => {
+        alert(error);
         Alert.alert(
           'Eroare',
           'Absenta nu a putut fi adaugata. Va rugam incercati din nou.',
           [
-            {text: 'Incearca din nou', onPress: () => this.didConfirmAddSkip(subject_id, date, token)},
+            {text: 'Incearca din nou', onPress: () => this.didConfirmAddSkip(subject_id, subject_name, student_name, date)},
             {text: 'Anuleaza', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
           ],
           { cancelable: true }
@@ -108,7 +98,6 @@ class GradesListDivider extends Component {
           'Sunteti sigur?',
           'Nota ' + grade + ' va fi adaugata pe data de ' + day + '-' + (month+1) + '-' + year,
           [
-            //{text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
             {text: 'Confirma', onPress: () => this.didConfirmAddGrade(subject_id, grade, year + '-' + (month+1) + '-' + day)},
             {text: 'Anuleaza', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
           ],
@@ -229,7 +218,7 @@ class GradesListDivider extends Component {
                         <Text>{grade}</Text>
                       </Button>
                     } />
-                    <Button onPress={() => this.didPressAddSkip(token, data.subject.id)} iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
+                    <Button onPress={() => this.didPressAddSkip(token, data.subject.id, data.subject.name, this.props.data.student_name)} iconLeft bordered style={{ marginBottom: 20, marginLeft: 10 }}>
                       <Icon active name="walk" />
                       <Text>Adauga absenta</Text>
                     </Button>

@@ -6,22 +6,22 @@ class FirebaseClient {
 
   constructor() {
     this.sendData = this.sendData.bind(this);
-    this.sendNotification = this.sendNotification.bind(this);
+    this.sendSkipNotification = this.sendSkipNotification.bind(this);
     this.sendNotificationWithData = this.sendNotificationWithData.bind(this);
   }
 
-  sendNotification(token) {
+  sendSkipNotification(token, student_name, subject_name, date) {
     let body = {
-    	"to": "dlFjHOZHYCg:APA91bH8hmHeIGVHxK941Xo2ay-oKReySnI1LgiXd5uVaGSCrdcmtxDSdA895atTkkSP6LpIu64MNqK2YOdswrNEdLioS-w2YqQ29kG_eM6qQLN_mj_O-fvMQouyqKD6X-F4dUGGvbOD",
-      "notification":{
-    		"title": "Catalog Elev",
-    		"body": "Marcu Florian a primit o absenta la matematica.",
+    	"to": token,
+      "notification": {
+    		"title": "Catalog Digital",
+    		"body": student_name + " a primit o absenta la " + subject_name + " pentru data de " + date + ".",
     		"sound": "default",
     		"click_action": "fcm.ACTION.ABSENTEE_RECEIVED"
     	},
     	"priority": 10
     }
-
+    console.log(JSON.stringify(body));
     this._send(JSON.stringify(body), "notification");
   }
 
