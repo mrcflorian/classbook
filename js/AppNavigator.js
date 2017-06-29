@@ -14,6 +14,7 @@ import Home from './components/home/';
 import ClassList from './components/class/';
 import GroupList from './components/group/';
 import GradesListDivider from './components/student';
+import StudentClassBookDisplayer from './components/student_classbook';
 import TeachingGroupsList from './components/teacher';
 import Header from './components/Header/';
 import Header1 from './components/Header/1';
@@ -180,6 +181,7 @@ class AppNavigator extends Component {
               <Scene key="class" component={ClassList} />
               <Scene key="group" component={GroupList} />
               <Scene key="student" component={GradesListDivider} />
+              <Scene key="student_classbook" component={StudentClassBookDisplayer} />
               <Scene key="teacher" component={TeachingGroupsList} />
               <Scene key="header" component={Header} />
               <Scene key="header1" component={Header1} />

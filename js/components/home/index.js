@@ -22,7 +22,7 @@ class Home extends Component { // eslint-disable-line
     super(props)
 
     this.state = {
-      username: 'gabyy',
+      username: 'florian',
       password: 'parola',
       isLoading: false,
       token: ""
@@ -100,9 +100,8 @@ class Home extends Component { // eslint-disable-line
       .then((response) => response.json())
       .then((responseJson) => {
         var answer = responseJson.response;
-        console.log(answer);
         if (answer == 'student') {
-          Actions['student'](responseJson.student.id);
+          Actions['student_classbook']({data: {student_id: responseJson.student.id, student_name: responseJson.student.last_name + " " + responseJson.student.first_name}});
         } else if (answer == 'teacher') {
           Actions['teacher'](responseJson.teacher.id);
         } else {
