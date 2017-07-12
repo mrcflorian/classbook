@@ -5,17 +5,36 @@ const { StyleSheet, Dimensions, Platform } = React;
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
+const standardFontSize = Math.round(((deviceHeight / 480) - 1) * (28 - 16) + 16)
+const contentViewWidth = Math.max(320, deviceWidth * 0.6)
 
 export default {
+  containerView: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  contentView: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   imageContainer: {
-    flex: 0,
     width: null,
     height: deviceHeight / 4,
   },
   logoContainer: {
-    flex: 1,
-    marginTop: deviceHeight / 8,
-    marginBottom: 30,
+    alignItems: 'center',
+    marginBottom: 15,
+    backgroundColor: 'transparent' ,
+  },
+  formContainer: {
+    alignItems: 'center',
+  },
+  logoImage: {
+    marginTop: 30,
+    height: 100,
+    width: 128,
   },
   logo: {
     position: 'absolute',
@@ -24,13 +43,26 @@ export default {
     width: 280,
     height: 100,
   },
-  text: {
-    color: '#D8D8D8',
-    bottom: 6,
-    marginTop: deviceHeight / 3,
-    fontSize: 34,
+  logoText: {
+    color: 'black',
+    fontSize: standardFontSize + 6,
   },
   container: {
     backgroundColor: '#FFF',
   },
+  loginInput: {
+    fontSize: standardFontSize - 4,
+    height: standardFontSize * 2 + 14
+  },
+  loginButton: {
+    margin: 15,
+    marginTop: 10,
+    height: standardFontSize * 2 + 20,
+    backgroundColor: '#527992',
+    borderRadius: 15,
+  },
+  loginButtonText: {
+    fontSize: standardFontSize,
+    lineHeight: Math.round(10 + standardFontSize),
+  }
 };

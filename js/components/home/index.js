@@ -13,8 +13,7 @@ import PushController from  "./../../firebase/PushController";
 
 import styles from './styles';
 
-const launchscreenBg = require('../../../img/launchscreen-bg.png');
-const launchscreenLogo = require('../../../img/logo-kitchen-sink.png');
+const logoImageSource = require('../../../img/classbook.png');
 
 class Home extends Component { // eslint-disable-line
 
@@ -22,7 +21,7 @@ class Home extends Component { // eslint-disable-line
     super(props)
 
     this.state = {
-      username: 'florian',
+      username: 'gabyy',
       password: 'parola',
       isLoading: false,
       token: ""
@@ -44,15 +43,20 @@ class Home extends Component { // eslint-disable-line
       return (
         <Container>
           <StatusBar barStyle='light-content'/>
-          <Image source={launchscreenBg} style={styles.imageContainer}>
-            <View style={{ alignItems: 'center', marginBottom: 50, backgroundColor: 'transparent' }}>
-              <Text style={styles.text}>Catalog digital</Text>
-              <View style={{ marginTop: 8 }} />
+          <Content>
+            <View style={styles.containerView}>
+              <View style={styles.contentView}>
+                <View style={styles.logoContainer}>
+                  <Image source={logoImageSource} style={styles.logoImage}>
+                  </Image>
+                  <Text style={styles.logoText}>Catalog digital</Text>
+                </View>
+                <View style={{flex: 1, paddingTop: 20}}>
+                  <ActivityIndicator size="large" />
+                </View>
+              </View>
             </View>
-          </Image>
-          <View style={{flex: 1, paddingTop: 20}}>
-            <ActivityIndicator />
-          </View>
+          </Content>
         </Container>
       );
     }
@@ -63,27 +67,30 @@ class Home extends Component { // eslint-disable-line
             onChangeToken={token => this.setState({token: token || ""})}/>
 
         <StatusBar barStyle='light-content'/>
-        <Image source={launchscreenBg} style={styles.imageContainer}>
-          <View style={{ alignItems: 'center', marginBottom: 50, backgroundColor: 'transparent' }}>
-            <Text style={styles.text}>Catalog digital</Text>
-            <View style={{ marginTop: 8 }} />
-          </View>
-        </Image>
+
         <Content>
-          <Form>
-            <Item floatingLabel>
-              <Label>Utilizator</Label>
-              <Input onChangeText={username => this.setState({username})}/>
-            </Item>
-            <Item floatingLabel last>
-              <Label>Parola</Label>
-              <Input onChangeText={password => this.setState({password})} />
-            </Item>
-          </Form>
-          <Button block style={{ margin: 15, marginTop: 50, height: 80 }} onPress={this._login}>
-            <Text style={{fontSize: 30, lineHeight: 40}}>Deschide catalog</Text>
-          </Button>
+          <View style={styles.containerView}>
+            <View style={styles.contentView}>
+              <View style={styles.logoContainer}>
+                <Image source={logoImageSource} style={styles.logoImage}>
+                </Image>
+                <Text style={styles.logoText}>Catalog digital</Text>
+              </View>
+              <Form style={styles.formContainer}>
+                <Item style={styles.loginInputItem}>
+                  <Input placeholder="Nume utilizator" style={styles.loginInput} onChangeText={username => this.setState({username})}/>
+                </Item>
+                <Item last style={styles.loginInputItem}>
+                  <Input placeholder="Parola" style={styles.loginInput} onChangeText={password => this.setState({password})} />
+                </Item>
+              </Form>
+              <Button block style={styles.loginButton} onPress={this._login}>
+                <Text style={styles.loginButtonText}>Deschide catalog</Text>
+              </Button>
+            </View>
+          </View>
         </Content>
+
       </Container>
     );
   }

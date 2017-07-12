@@ -60,13 +60,26 @@ class GroupList extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <View style={{flex: 1, paddingTop: 20}}>
-          <ActivityIndicator />
-        </View>
+        <Container style={styles.container}>
+          <Header>
+            <Left>
+              <Button transparent onPress={() => Actions.pop()}>
+                <Icon name="arrow-back" />
+              </Button>
+            </Left>
+            <Body>
+              <Title>Clasa {this.props.data.name}</Title>
+            </Body>
+            <Right />
+          </Header>
+          <View style={{flex: 1, paddingTop: 20}}>
+            <ActivityIndicator size="large" />
+          </View>
+        </Container>
       );
     }
     return (
-      <Container style={styles.container}>
+      <Container>
         <Header>
           <Left>
             <Button transparent onPress={() => Actions.pop()}>
@@ -74,19 +87,16 @@ class GroupList extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Clasa {this.props.data.name}</Title>
+            <Title>Clasa {this.props.data.name} - {this.props.data.school_name}</Title>
           </Body>
           <Right />
         </Header>
 
-        <Content>
-          <List
+        <Content style={styles.content}>
+          <List style={styles.studentsListContainer}
             dataArray={this.state.dataSource} renderRow={data =>
-              <ListItem button onPress={() => { Actions["student"]({data: {teacher_id: this.props.data.teacher_id, student_id: data.id, student_name: data.last_name + " " + data.first_name, student_device_token: data.device_token}}); this.props.closeDrawer() }} >
-                <Text>{data.last_name} {data.first_name}</Text>
-                <Right>
-                  <Icon name="arrow-forward" style={{ color: '#999' }} />
-                </Right>
+              <ListItem style={styles.studentNameRow} button onPress={() => { Actions["student"]({data: {teacher_id: this.props.data.teacher_id, student_id: data.id, student_name: data.last_name + " " + data.first_name, student_device_token: data.device_token}}); this.props.closeDrawer() }} >
+                <Text style={styles.studentNameText}>{data.last_name} {data.first_name}</Text>
               </ListItem>
             }
           />

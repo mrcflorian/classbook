@@ -62,15 +62,28 @@ class TeachingGroupsList extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <View style={{flex: 1, paddingTop: 20}}>
-          <ActivityIndicator />
-        </View>
+        <Container style={styles.container}>
+          <Header style={styles.header}>
+            <Left>
+              <Button transparent onPress={this.props.openDrawer}>
+                <Icon name="menu" />
+              </Button>
+            </Left>
+            <Body>
+              <Title>Catalog Digital</Title>
+            </Body>
+            <Right />
+          </Header>
+          <View style={{flex: 1, paddingTop: 20}}>
+            <ActivityIndicator size="large" />
+          </View>
+        </Container>
       );
     }
 
     return (
       <Container style={styles.container}>
-        <Header>
+        <Header style={styles.header}>
           <Left>
             <Button transparent onPress={this.props.openDrawer}>
               <Icon name="menu" />
@@ -88,11 +101,11 @@ class TeachingGroupsList extends Component {
             dataArray={this.state.dataSource} renderRow={data =>
               <Content>
                 <ListItem itemDivider>
-                  <Text>{data.name}</Text>
+                  <Text style={styles.schoolNameText}>{data.name}</Text>
                 </ListItem>
-                <List dataArray={data.groups} renderRow={group =>
-                  <ListItem button onPress={() => Actions['group']({data: {id: group.id, name: group.name, teacher_id: this.props.data}})}>
-                    <Text>Clasa {group.name}</Text>
+                <List style={styles.groupsListContainer} dataArray={data.groups} renderRow={group =>
+                  <ListItem style={styles.groupNameRow} button onPress={() => Actions['group']({data: {id: group.id, name: group.name, teacher_id: this.props.data, school_name: data.name}})}>
+                    <Text style={styles.groupNameText}>Clasa {group.name}</Text>
                   </ListItem>
                   }
                 />
